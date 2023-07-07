@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>
-      Get rickrolled 
-    </h1>
-    <video controls autoplay>
-      <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
+    <h1>Get Rickrolled</h1>
+    <div id="player"></div>
+
+    <script>
+      // Load the YouTube API
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // Create an iframe player when the API is ready
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          videoId: 'dQw4w9WgXcQ',
+          playerVars: {
+            autoplay: 1,  // Autoplay the video
+            controls: 1,  // Show video controls
+            modestbranding: 1,  // Hide YouTube logo
+            loop: 1,  // Loop the video
+            playlist: 'dQw4w9WgXcQ'  // Required for looping
+          }
+        });
+      }
+    </script>
   </body>
 </html>
