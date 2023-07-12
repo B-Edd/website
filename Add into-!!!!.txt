@@ -1,0 +1,9 @@
+Yo! you can do this:
+
+function runjs() {
+    open("google.com");
+}
+
+and it opens like the first link and the /google.com
+for example:
+https://b-edd/website/google.com
